@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Technical Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Python Technical Documentation</header>
+      <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li>
+          <a class="nav-link" href="#Getting_Started">Getting Started</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Language_Basics">Language Basics</a>
+        </li>
+        <li><a class="nav-link" href="#Advanced_Concepts">Advanced Concepts</a></li>
+        <li><a class="nav-link" href="#Standard_Library">Standard Library</a></li>
+        <li>
+          <a class="nav-link" href="#External_Libraries">External Libraries</a>
+        </li>
+        <li><a class="nav-link" href="#Best_Practices">Best Practices</a></li>
+        <li>
+          <a class="nav-link" href="#Tips_and_Tricks">Tips and Tricks</a>
+        </li>
+        <li><a class="nav-link" href="#Frequently_Asked_Questions_(FAQ)">Frequently Asked Questions (FAQ)</a></li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+          <h3>Purpose</h3>
+          <p>Dokumentasi Smart Parking ini bertujuan agar orang lain dapat menggunakan sistem ini dan diharapkan agar sistem ini dapat dikembangkan orang lain.</p>
+
+          <h3>System Requirements</h3>
+          <p>Sebelum melakukan instalasi, alangkah baiknya untuk memastikan persyaratan untuk komputer atau laptop berikut:</p>
+          <ul>
+            <li>Operating System: Windows</li>
+            <li>Minimum hardware: 1 GHz processor, 2 GB RAM</li>
+            <li>Web browser: Google Chrome</li>
+          </ul>
+          <p>Persyaratan tersebut bukanlah kewajiban seperti OS Windows dan Web Browser Google Chrome, Namun alangkah baiknya mengikuti persyaratan tersebut karena sistem sudah diuji disana.</p>
+
+          <h3>Hardware System</h3>
+          <p>Sistem Parkir ini memerlukan beberapa komponen yang harus dibeli seperti:</p>
+          <ul>
+            <li>Microcontroller: Arduino UNO</li>
+            <li>Webcam: Webcam internal or external</li>
+            <li>RFID MFRC522: Card and Reader</li>
+            <li>Servo Motor</li>
+            <li>Passive Buzzer</li>
+            <li>Jumper Cable, Ethernet Cable, Pushbutton</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="main-section" id="Getting_Started">
+        <header>Getting Started</header>
+        <article>
+          <h3>Installation</h3>
+          <p>
+            Sistem ini memerlukan beberapa aplikasi seperti Anaconda, XAMPP, Arduino IDE dan VS Code. Jika sudah memiliki python di atas versi 3.6 maka tidak perlu menginstal Anaconda, tetapi apabila anda baru memulai, lebih baik
+            menggunakan Anaconda karena tidak harus melakukan konfigurasi manual. Kemudian untuk code editor sebenarnya bebas tidak harus menggunakan VS Code.
+          </p>
+
+          <h3>Clone Github Repositories</h3>
+          <p>
+            Sistem ini membutuhkan beberapa code yang berada pada repository github. Oleh karena itu kita perlu clone github repository pada folder yang kita inginkan. Kita membutuhkan dua repository github untuk sistem ini. Cara clone dari
+            github adalah dengn membuka command prompt pada directory yang kita inginkan kemudian ketik pada command prompt seperti di bawah ini:
+          </p>
+          <code>git clone https://github.com/ultralytics/yolov5.git</code>
+          <code>git clone </code>
+
+          <h3>Integrated Development Environments (IDEs)</h3>
+          <p>There are several popular IDEs available for Python development, such as:</p>
+          <ul>
+            <li>PyCharm</li>
+            <li>Visual Studio Code (VS Code)</li>
+            <li>IDLE (comes bundled with Python)</li>
+            <li>Jupyter Notebook/Lab</li>
+          </ul>
+          <p>These IDEs provide features like code autocompletion, debugging, and project management, making the development process more efficient.</p>
+        </article>
+      </section>
+
+      <section class="main-section" id="Language_Basics">
+        <header>Language Basics</header>
+        <article>
+          <h3>Variables and Data Types</h3>
+          <p>Python is dynamically typed, meaning you don't need to specify the variable's type explicitly. Common data types include integers, floats, strings, lists, tuples, dictionaries, and sets.</p>
+          <pre>
+            <code
+            ># Example of variable declaration and assignment
+              name = "John Doe"
+              age = 30
+              is_student = True
+            </code>
+          </pre>
+
+          <h3>Operators</h3>
+          <p>Python supports various operators, including arithmetic, comparison, logical, and assignment operators.</p>
+          <pre>
+            <code
+            ># Arithmetic Operators
+            x = 10
+            y = 3
+            result = x + y
+            
+            # Comparison Operators
+            is_equal = x == y
+            
+            # Logical Operators
+            is_true = True and False
+            
+            # Assignment Operators
+            x += 1  # Equivalent to x = x + 1
+            </code>
+          </pre>
+
+          <h3>Conditional Statements</h3>
+          <p>Python uses if, elif, and else statements for conditional branching.</p>
+          <pre>
+            <code
+            ># Example of if-elif-else statement
+            x = 10
+            if x > 10:
+                print("x is greater than 10")
+            elif x == 10:
+                print("x is equal to 10")
+            else:
+                print("x is less than 10")
+            </code>
+          </pre>
+
+          <h3>Loops</h3>
+          <p>Python provides for loops and while loops for iteration.</p>
+          <pre>
+            <code
+            ># Example of a for loop
+            fruits = ["apple", "banana", "orange"]
+            for fruit in fruits:
+                print(fruit)
+            
+            # Example of a while loop
+            count = 0
+            while count < 5:
+                print(count)
+                count += 1
+            </code>
+          </pre>
+
+          <h3>Functions</h3>
+          <p>Functions in Python are defined using the <b>def</b> keyword.</p>
+          <pre>
+            <code
+            ># Example of a function
+            def greet(name):
+                return "Hello, " + name + "!"
+            
+            message = greet("Alice")
+            print(message)  # Output: Hello, Alice!
+            </code>
+          </pre>
+
+          <h3>Classes and Objects</h3>
+          <p>Python supports object-oriented programming, and classes can be defined using the <b>class</b> keyword.</p>
+          <pre>
+            <code
+            ># Example of a class
+            class Rectangle:
+                def __init__(self, width, height):
+                    self.width = width
+                    self.height = height
+            
+                def area(self):
+                    return self.width * self.height
+            
+            # Creating an object of the Rectangle class
+            rect = Rectangle(5, 10)
+            print(rect.area())  # Output: 50
+            </code>
+          </pre>
+
+          <h3>Modules and Packages</h3>
+          <p>Python code can be organized into modules, and multiple modules can be grouped into packages. Modules are imported using the <b>import</b> statement.</p>
+          <pre>
+            <code
+            ># Example of importing a module and using a function from it
+            import math
+            
+            print(math.sqrt(25))  # Output: 5.0
+            </code>
+          </pre>
+        </article>
+      </section>
+
+      <section class="main-section" id="Advanced_Concepts">
+        <header>Advanced Concepts</header>
+        <article>
+          <h3>Exception Handling</h3>
+          <p>Python allows you to handle exceptions using try, except blocks.</p>
+          <pre>
+            <code
+            ># Example of exception handling
+            try:
+                result = 10 / 0
+            except ZeroDivisionError:
+                print("Error: Division by zero.")
+            </code>
+          </pre>
+
+          <h3>File Handling</h3>
+          <p>Python provides functions to work with files, like opening, reading, and writing.</p>
+          <pre>
+            <code
+            ># Example of file handling
+            with open("example.txt", "r") as file:
+                content = file.read()
+            
+            print(content)
+            </code>
+          </pre>
+
+          <h3>Decorators</h3>
+          <p>Decorators are used to modify the behavior of functions or methods.</p>
+          <pre>
+            <code
+            ># Example of a decorator
+            def my_decorator(func):
+                def wrapper():
+                    print("Something is happening before the function is called.")
+                    func()
+                    print("Something is happening after the function is called.")
+            
+                return wrapper
+            
+            @my_decorator
+            def say_hello():
+                print("Hello!")
+            
+            say_hello()
+            </code>
+          </pre>
+
+          <h3>Generators</h3>
+          <p>Generators allow you to create iterators using the yield statement.</p>
+          <pre>
+            <code
+            ># Example of a generator
+            def countdown(n):
+                while n > 0:
+                    yield n
+                    n -= 1
+            
+            for num in countdown(5):
+                print(num)
+            </code>
+          </pre>
+
+          <h3>List Comprehensions</h3>
+          <p>List comprehensions provide a concise way to create lists.</p>
+          <pre>
+            <code
+            ># Example of a list comprehension
+            squares = [x * x for x in range(10)]
+            print(squares)  # Output: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+            </code>
+          </pre>
+
+          <h3>Regular Expressions</h3>
+          <p>Python supports regular expressions for pattern matching and manipulation.</p>
+          <pre>
+            <code
+            ># Example of regular expression
+            import re
+            
+            pattern = r"\d+"
+            text = "Hello 123 World"
+            matches = re.findall(pattern, text)
+            print(matches)  # Output: ['123']
+            </code>
+          </pre>
+
+          <h3>Multithreading and Multiprocessing</h3>
+          <p>Python allows multithreading and multiprocessing for concurrent execution.</p>
+          <pre>
+            <code
+            ># Example of multithreading
+            import threading
+            
+            def print_numbers():
+                for i in range(1, 6):
+                    print(i)
+            
+            thread = threading.Thread(target=print_numbers)
+            thread.start()
+            </code>
+          </pre>
+
+          <h3>Web Scraping</h3>
+          <p>Python can be used for web scraping using libraries like BeautifulSoup and Requests.</p>
+          <pre>
+            <code
+            ># Example of web scraping with BeautifulSoup and Requests
+            import requests
+            from bs4 import BeautifulSoup
+            
+            url = "https://example.com"
+            response = requests.get(url)
+            
+            soup = BeautifulSoup(response.content, "html.parser")
+            title = soup.title.get_text()
+            print(title)
+            </code>
+          </pre>
+        </article>
+      </section>
+
+      <section class="main-section" id="Standard_Library">
+        <header>Standard Library</header>
+        <article>
+          <h3>Built-in Functions</h3>
+          <p>Python comes with a rich set of built-in functions that are readily available.</p>
+          <pre>
+            <code
+            ># Example of built-in functions
+            num_list = [1, 2, 3, 4, 5]
+            sum_of_list = sum(num_list)
+            print(sum_of_list)  # Output: 15
+            </code>
+          </pre>
+
+          <h3>Built-in Modules</h3>
+          <p>Python's standard library includes many built-in modules for various purposes.</p>
+          <pre>
+            <code
+            ># Example of using a built-in module
+            import random
+            
+            random_number = random.randint(1, 10)
+            print(random_number)
+            </code>
+          </pre>
+        </article>
+      </section>
+
+      <section class="main-section" id="External_Libraries">
+        <header>External Libraries</header>
+        <article>
+          <p>Python has a vast ecosystem of external libraries developed by the community to extend its capabilities.</p>
+          <pre>
+            <code
+            ># Example of using an external library
+            import numpy as np
+            
+            arr = np.array([1, 2, 3, 4, 5])
+            print(np.mean(arr))  # Output: 3.0
+            </code>
+          </pre>
+        </article>
+      </section>
+
+      <section class="main-section" id="Best_Practices">
+        <header>Best Practices</header>
+        <article>
+          <h3>Code Formatting and Styling</h3>
+          <p>Python has an official style guide called PEP 8, which promotes readable and consistent code.</p>
+
+          <h3>Documentation and Comments</h3>
+          <p>Proper documentation and comments are essential to make code understandable to others.</p>
+
+          <h3>Unit Testing</h3>
+          <p>Writing unit tests using frameworks like <b>unittest</b> or <b>pytest</b> helps ensure the code's correctness and stability.</p>
+        </article>
+      </section>
+
+      <section class="main-section" id="Tips_and_Tricks">
+        <header>Tips and Tricks</header>
+        <article>
+          <h3>Pythonic Idioms</h3>
+          <p>Learn and adopt Pythonic idioms to write code that is more readable and efficient.</p>
+
+          <h3>Performance Optimization</h3>
+          <p>Python offers various ways to optimize code performance, such as using built-in functions and libraries wisely.</p>
+        </article>
+      </section>
+
+      <section class="main-section" id="Frequently_Asked_Questions_(FAQ)">
+        <header>Frequently Asked Questions (FAQ)</header>
+        <article>
+          <b>Click on the questions below, if you want to see the answers :</b>
+          <p class="faq-question"><a href="faq.html" target="_blank">What is Python, and what can I use it for ?</a></p>
+          <p class="faq-question"><a href="faq.html" target="_blank">How do I install Python on my computer ?</a></p>
+          <p class="faq-question"><a href="faq.html" target="_blank">What is the difference between Python 2 and Python 3 ?</a></p>
+          <p class="faq-question"><a href="faq.html" target="_blank">How do I declare variables in Python, and do I need to specify their data types ?</a></p>
+        </article>
+      </section>
+
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <article>
+          <ul>
+            <li>
+              This article written by
+              <a href="https://openai.com/blog/chatgpt" target="_blank">ChatGPT</a>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
