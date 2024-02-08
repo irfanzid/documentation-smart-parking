@@ -3,402 +3,193 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python Technical Document</title>
+    <title>Smart Parking Documentation</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <nav id="navbar">
-      <header>Python Technical Documentation</header>
+      <header>Smart Parking Documentation</header>
       <ul>
         <li><a class="nav-link" href="#Introduction">Introduction</a></li>
         <li>
           <a class="nav-link" href="#Getting_Started">Getting Started</a>
         </li>
         <li>
-          <a class="nav-link" href="#Language_Basics">Language Basics</a>
+          <a class="nav-link" href="#penggunaan">Usage</a>
         </li>
-        <li><a class="nav-link" href="#Advanced_Concepts">Advanced Concepts</a></li>
-        <li><a class="nav-link" href="#Standard_Library">Standard Library</a></li>
-        <li>
-          <a class="nav-link" href="#External_Libraries">External Libraries</a>
-        </li>
-        <li><a class="nav-link" href="#Best_Practices">Best Practices</a></li>
-        <li>
-          <a class="nav-link" href="#Tips_and_Tricks">Tips and Tricks</a>
-        </li>
-        <li><a class="nav-link" href="#Frequently_Asked_Questions_(FAQ)">Frequently Asked Questions (FAQ)</a></li>
+        <li><a class="nav-link" href="#detail">Detail</a></li>
+        <li><a class="nav-link" href="#error">Common Errors</a></li>
         <li><a class="nav-link" href="#Reference">Reference</a></li>
       </ul>
     </nav>
 
     <main id="main-doc">
       <section class="main-section" id="Introduction">
-        <header>Introduction</header>
+        <header>Pengenalan</header>
         <article>
-          <h3>Purpose</h3>
+          <h3>Tujuan</h3>
           <p>Dokumentasi Smart Parking ini bertujuan agar orang lain dapat menggunakan sistem ini dan diharapkan agar sistem ini dapat dikembangkan orang lain.</p>
 
-          <h3>System Requirements</h3>
-          <p>Sebelum melakukan instalasi, alangkah baiknya untuk memastikan persyaratan untuk komputer atau laptop berikut:</p>
+          <h3>Spesifikasi</h3>
+          <p>Sebelum melakukan instalasi, alangkah baiknya untuk memastikan spesifikasi untuk komputer atau laptop berikut:</p>
           <ul>
             <li>Operating System: Windows</li>
             <li>Minimum hardware: 1 GHz processor, 2 GB RAM</li>
             <li>Web browser: Google Chrome</li>
           </ul>
-          <p>Persyaratan tersebut bukanlah kewajiban seperti OS Windows dan Web Browser Google Chrome, Namun alangkah baiknya mengikuti persyaratan tersebut karena sistem sudah diuji disana.</p>
+          <p>Spesifikasi tersebut bukanlah kewajiban seperti OS Windows dan Web Browser Google Chrome, Namun alangkah baiknya mengikuti persyaratan tersebut karena sistem sudah diuji disana.</p>
 
-          <h3>Hardware System</h3>
+          <h3>Sistem Hardware</h3>
           <p>Sistem Parkir ini memerlukan beberapa komponen yang harus dibeli seperti:</p>
           <ul>
-            <li>Microcontroller: Arduino UNO</li>
-            <li>Webcam: Webcam internal or external</li>
-            <li>RFID MFRC522: Card and Reader</li>
-            <li>Servo Motor</li>
-            <li>Passive Buzzer</li>
-            <li>Jumper Cable, Ethernet Cable, Pushbutton</li>
+            <li>Microcontroller: Arduino UNO 2 buah</li>
+            <li>Webcam: Webcam internal atau eksternal 2 buah</li>
+            <li>RFID MFRC522: Kartu dan Reader 1 pasang</li>
+            <li>Servo Motor 2 buah</li>
+            <li>Sensor Ultrasonik HC SR04 2 buah</li>
+            <li>Passive Buzzer 2 buah</li>
+            <li>Kabel Jumper secukupnya</li>
+            <li>Kabel Ethernet 1 buah</li>
+            <li>Pushbutton 2 buah</li>
           </ul>
         </article>
       </section>
 
       <section class="main-section" id="Getting_Started">
-        <header>Getting Started</header>
+        <header>Persiapan</header>
         <article>
-          <h3>Installation</h3>
+          <h3>Instalasi</h3>
           <p>
             Sistem ini memerlukan beberapa aplikasi seperti Anaconda, XAMPP, Arduino IDE dan VS Code. Jika sudah memiliki python di atas versi 3.6 maka tidak perlu menginstal Anaconda, tetapi apabila anda baru memulai, lebih baik
             menggunakan Anaconda karena tidak harus melakukan konfigurasi manual. Kemudian untuk code editor sebenarnya bebas tidak harus menggunakan VS Code.
           </p>
+          <p>
+            Sistem ini juga menggunakan dua komputer atau laptop. Untuk instalasi komputer pertama (utama) dan kedua hampir sama, namun yang membedakannya hanya komputer kedua tidak perlu menginstall XAMPP karena komputer kedua mengakses
+            databse (XAMPP) milik komputer pertama melalui kabel ethernet
+          </p>
 
           <h3>Clone Github Repositories</h3>
           <p>
-            Sistem ini membutuhkan beberapa code yang berada pada repository github. Oleh karena itu kita perlu clone github repository pada folder yang kita inginkan. Kita membutuhkan dua repository github untuk sistem ini. Cara clone dari
-            github adalah dengn membuka command prompt pada directory yang kita inginkan kemudian ketik pada command prompt seperti di bawah ini:
+            Sistem ini membutuhkan beberapa code yang berada pada repository github. Oleh karena itu kita perlu clone github repository pada alamat xampp/htdocs. Cara clone dari github adalah dengn membuka command prompt pada directory yang
+            kita inginkan kemudian ketik pada command prompt seperti di bawah ini:
           </p>
-          <code>git clone https://github.com/ultralytics/yolov5.git</code>
-          <code>git clone </code>
+          <code>git clone https://github.com/irfanzid/smart-parking.git</code>
+          <p>
+            Atau bisa juga dengan mendownload zipnya melaui github <a href="https://github.com/irfanzid/smart-parking.git" target="_blank" rel="noopener noreferrer">https://github.com/irfanzid/smart-parking.git</a> dan setelah itu unzip di
+            alamat xampp/htdocs
+          </p>
 
-          <h3>Integrated Development Environments (IDEs)</h3>
-          <p>There are several popular IDEs available for Python development, such as:</p>
+          <h3>Modifikasi Program</h3>
+          <p>Setelah melakukan cloning anda akan memiliki berbagai file program, seperti css, php, python dan javascript. Beberapa langkah ini perlu dilakukan agar program berjalan lancar:</p>
           <ul>
-            <li>PyCharm</li>
-            <li>Visual Studio Code (VS Code)</li>
-            <li>IDLE (comes bundled with Python)</li>
-            <li>Jupyter Notebook/Lab</li>
+            <li>
+              Ganti host pada program deploy2.py menjadi alamat IP komputer Utama anda. Klik di sini untuk cara membuat alamat TCP/IPv4.
+              <pre>
+                <code>koneksi = mysql.connector.connect(
+                  host="192.168.1.102", # ubah dengan alamat ip yang kalian telah setting
+                  user="root",
+                  password="",
+                  database="skripsi_db")
+                </code>
+              </pre>
+            </li>
+
+            <li>
+              Ganti host koneksi.php pada komputer kedua dengan IP komputer utama.
+              <pre>
+                <code>$host = "192.168.1.102"; // Ganti sesuai dengan host MySQL Anda
+                  $username = "root"; // Ganti sesuai dengan username MySQL Anda
+                  $password = ""; // Ganti sesuai dengan password MySQL Anda
+                  $database = "skripsi_db"; // Ganti sesuai dengan nama database Anda
+                </code>
+              </pre>
+            </li>
+            <li>Untuk Program Komputer Utama atau pertama tidak perlu merubah apapun</li>
           </ul>
-          <p>These IDEs provide features like code autocompletion, debugging, and project management, making the development process more efficient.</p>
+
+          <h3>Modifikasi Data Training</h3>
+          <p>Sebenarnya langkah ini opsional, anda dapat mengganti dengan mengubah best.pt menggunakan data pelatihan anda sendiri pada folder python</p>
         </article>
       </section>
 
-      <section class="main-section" id="Language_Basics">
-        <header>Language Basics</header>
+      <section class="main-section" id="penggunaan">
+        <header>Tata Cara Pengunaan</header>
         <article>
-          <h3>Variables and Data Types</h3>
-          <p>Python is dynamically typed, meaning you don't need to specify the variable's type explicitly. Common data types include integers, floats, strings, lists, tuples, dictionaries, and sets.</p>
-          <pre>
-            <code
-            ># Example of variable declaration and assignment
-              name = "John Doe"
-              age = 30
-              is_student = True
-            </code>
-          </pre>
+          <h3>Website</h3>
+          <p>Langkah awal untuk menjalankan program ini adalah dengan membuka aplikasi XAMPP. Kemudian setelah terbuka ikuti langkah berikut ini:</p>
+          <ol>
+            <li>Start apache dan mysql, setelah itu minimize jangan di close</li>
+            <li>Buka web browser, saya sarankan chrome. Kemudian ketik localhost/namafolderkalian. Untuk kasus saya localhost/skripsi</li>
+            <li>Kemudian silahkan login dengan username = admin dan password = 123</li>
+            <li>Selamat anda sudah dapat menjelajahi web Smart Parkir</li>
+          </ol>
 
-          <h3>Operators</h3>
-          <p>Python supports various operators, including arithmetic, comparison, logical, and assignment operators.</p>
-          <pre>
-            <code
-            ># Arithmetic Operators
-            x = 10
-            y = 3
-            result = x + y
-            
-            # Comparison Operators
-            is_equal = x == y
-            
-            # Logical Operators
-            is_true = True and False
-            
-            # Assignment Operators
-            x += 1  # Equivalent to x = x + 1
-            </code>
-          </pre>
+          <h3>Hardware</h3>
+          <p>
+            Jika anda belum mengetahui tentang Arduino UNO, saya sarankan untuk mempelajarinya terlebih dahulu agar dapat mengikuti tutorial ini. Untuk video tutorial arduino dasar klik
+            <a href="https://www.youtube.com/playlist?list=PLwWF-ICTWmB7-b9bsE3UcQzz-7ipI5tbR" target="_blank" rel="noopener noreferrer">di sini.</a>
+          </p>
+          <p>Jika anda sudah mengetahui cara penggunaan arduino, berikut langkah-langkah perakitan prototipe</p>
+          <ol>
+            <li>Siapkan alat dan bahan, atau jika belum punya dapat di beli di toko online</li>
+            <li>
+              Rakit rangkaian seperti gambar ini <br />
+              <a href="diagramBlok.PNG" target="_blank" rel="noopener noreferrer"><b>KLIK UNTUK MELIHAT GAMBAR</b></a>
+            </li>
+            <li>Upload program RFIDtoPython.ino</li>
+            <li>Komunikasi arduino dengan sistem komputer menggunakan kabel serial sehingga kabel serial tidak perlu dilepas</li>
+          </ol>
 
-          <h3>Conditional Statements</h3>
-          <p>Python uses if, elif, and else statements for conditional branching.</p>
-          <pre>
-            <code
-            ># Example of if-elif-else statement
-            x = 10
-            if x > 10:
-                print("x is greater than 10")
-            elif x == 10:
-                print("x is equal to 10")
-            else:
-                print("x is less than 10")
-            </code>
-          </pre>
-
-          <h3>Loops</h3>
-          <p>Python provides for loops and while loops for iteration.</p>
-          <pre>
-            <code
-            ># Example of a for loop
-            fruits = ["apple", "banana", "orange"]
-            for fruit in fruits:
-                print(fruit)
-            
-            # Example of a while loop
-            count = 0
-            while count < 5:
-                print(count)
-                count += 1
-            </code>
-          </pre>
-
-          <h3>Functions</h3>
-          <p>Functions in Python are defined using the <b>def</b> keyword.</p>
-          <pre>
-            <code
-            ># Example of a function
-            def greet(name):
-                return "Hello, " + name + "!"
-            
-            message = greet("Alice")
-            print(message)  # Output: Hello, Alice!
-            </code>
-          </pre>
-
-          <h3>Classes and Objects</h3>
-          <p>Python supports object-oriented programming, and classes can be defined using the <b>class</b> keyword.</p>
-          <pre>
-            <code
-            ># Example of a class
-            class Rectangle:
-                def __init__(self, width, height):
-                    self.width = width
-                    self.height = height
-            
-                def area(self):
-                    return self.width * self.height
-            
-            # Creating an object of the Rectangle class
-            rect = Rectangle(5, 10)
-            print(rect.area())  # Output: 50
-            </code>
-          </pre>
-
-          <h3>Modules and Packages</h3>
-          <p>Python code can be organized into modules, and multiple modules can be grouped into packages. Modules are imported using the <b>import</b> statement.</p>
-          <pre>
-            <code
-            ># Example of importing a module and using a function from it
-            import math
-            
-            print(math.sqrt(25))  # Output: 5.0
-            </code>
-          </pre>
+          <h3>Computer Vision</h3>
+          <p>Untuk mengaktifkan program computer vision, kita perlu membuka command prompt pada directory yang sama dengan file deploy.py dan deploy2.py</p>
+          <p>
+            deploy.py merupakan program untuk pintu masuk dan deploy.py merupakan program untuk pintu keluar. Jadi jalankan salah satu saja pada komputer yang sudah ditentukan. Misal komputer A untuk mengendalikan pintu masuk, maka run
+            program deploy.py dan untuk komputer B run deploy2.py
+          </p>
+          <p>Cara run di command promt seperti berikut:</p>
+          <ol>
+            <li>Buka directory dimana deploy.py dan deploy2.py berada</li>
+            <li>Ketik CMD pada kolom alamat directory</li>
+            <li>
+              ketik di cmd python deploy.py, lalu enter <br />
+              <a href="cmdClone.PNG" target="_blank" rel="noopener noreferrer"><b>KLIK UNTUK MELIHAT GAMBAR</b></a>
+            </li>
+            <li>Setelah itu tunggu proses hingga cmd bertuliskan "Silahkan tempelkan kartu"</li>
+            <li>
+              Tempelkan kartu RFID sambil mengarahkan webcam (default kamera bawaan komputer) ke plat kendaraan. Sebenarnya tidak harus plat sungguhan, bisa menggunakan gambar plat lewat hp, hasil print-printan atau hal lainnya yang
+              menggambarkan plat
+            </li>
+            <li>Setelah itu hanya tinggal menunggu hasil. Hasil akan disimpan otomatis di directory dan database</li>
+          </ol>
         </article>
       </section>
 
-      <section class="main-section" id="Advanced_Concepts">
-        <header>Advanced Concepts</header>
+      <section class="main-section" id="detail">
+        <header>Detail Smart Parkir</header>
         <article>
-          <h3>Exception Handling</h3>
-          <p>Python allows you to handle exceptions using try, except blocks.</p>
-          <pre>
-            <code
-            ># Example of exception handling
-            try:
-                result = 10 / 0
-            except ZeroDivisionError:
-                print("Error: Division by zero.")
-            </code>
-          </pre>
-
-          <h3>File Handling</h3>
-          <p>Python provides functions to work with files, like opening, reading, and writing.</p>
-          <pre>
-            <code
-            ># Example of file handling
-            with open("example.txt", "r") as file:
-                content = file.read()
-            
-            print(content)
-            </code>
-          </pre>
-
-          <h3>Decorators</h3>
-          <p>Decorators are used to modify the behavior of functions or methods.</p>
-          <pre>
-            <code
-            ># Example of a decorator
-            def my_decorator(func):
-                def wrapper():
-                    print("Something is happening before the function is called.")
-                    func()
-                    print("Something is happening after the function is called.")
-            
-                return wrapper
-            
-            @my_decorator
-            def say_hello():
-                print("Hello!")
-            
-            say_hello()
-            </code>
-          </pre>
-
-          <h3>Generators</h3>
-          <p>Generators allow you to create iterators using the yield statement.</p>
-          <pre>
-            <code
-            ># Example of a generator
-            def countdown(n):
-                while n > 0:
-                    yield n
-                    n -= 1
-            
-            for num in countdown(5):
-                print(num)
-            </code>
-          </pre>
-
-          <h3>List Comprehensions</h3>
-          <p>List comprehensions provide a concise way to create lists.</p>
-          <pre>
-            <code
-            ># Example of a list comprehension
-            squares = [x * x for x in range(10)]
-            print(squares)  # Output: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-            </code>
-          </pre>
-
-          <h3>Regular Expressions</h3>
-          <p>Python supports regular expressions for pattern matching and manipulation.</p>
-          <pre>
-            <code
-            ># Example of regular expression
-            import re
-            
-            pattern = r"\d+"
-            text = "Hello 123 World"
-            matches = re.findall(pattern, text)
-            print(matches)  # Output: ['123']
-            </code>
-          </pre>
-
-          <h3>Multithreading and Multiprocessing</h3>
-          <p>Python allows multithreading and multiprocessing for concurrent execution.</p>
-          <pre>
-            <code
-            ># Example of multithreading
-            import threading
-            
-            def print_numbers():
-                for i in range(1, 6):
-                    print(i)
-            
-            thread = threading.Thread(target=print_numbers)
-            thread.start()
-            </code>
-          </pre>
-
-          <h3>Web Scraping</h3>
-          <p>Python can be used for web scraping using libraries like BeautifulSoup and Requests.</p>
-          <pre>
-            <code
-            ># Example of web scraping with BeautifulSoup and Requests
-            import requests
-            from bs4 import BeautifulSoup
-            
-            url = "https://example.com"
-            response = requests.get(url)
-            
-            soup = BeautifulSoup(response.content, "html.parser")
-            title = soup.title.get_text()
-            print(title)
-            </code>
-          </pre>
+          <h3>Diagram Blok</h3>
+          <p>Diagram blok adalah representasi grafis dari suatu sistem, proyek, atau skenario. Diagram blok bisa dilihat pada gambar dibawah ini</p>
+          <p>
+            <a href="blok.PNG" target="_blank" rel="noopener noreferrer"><b>KLIK UNTUK MELIHAT GAMBAR</b></a>
+          </p>
+          <h3>Flowchart</h3>
+          <p>Flowchart atau bagan alur adalah diagram yang menampilkan langkah-langkah dan keputusan untuk melakukan sebuah proses dari suatu program. Flowchart sistem ini dapat dilihat pada gambar berikut ini</p>
+          <p>
+            <a href="flowchart.PNG" target="_blank" rel="noopener noreferrer"><b>KLIK UNTUK MELIHAT GAMBAR</b></a>
+          </p>
+          <h3>Cara Kerja</h3>
+          <p>Untuk lebih jelasnya Dapat DIlihat pada video ini <a href="https://youtu.be/D_n2dY-FOH8?si=XojFA2h2e3wzDSr8" target="_blank" rel="noopener noreferrer">https://youtu.be/D_n2dY-FOH8?si=XojFA2h2e3wzDSr8</a></p>
         </article>
       </section>
 
-      <section class="main-section" id="Standard_Library">
-        <header>Standard Library</header>
+      <section class="main-section" id="error">
+        <header>Penanganan Error yang umum terjadi</header>
         <article>
-          <h3>Built-in Functions</h3>
-          <p>Python comes with a rich set of built-in functions that are readily available.</p>
-          <pre>
-            <code
-            ># Example of built-in functions
-            num_list = [1, 2, 3, 4, 5]
-            sum_of_list = sum(num_list)
-            print(sum_of_list)  # Output: 15
-            </code>
-          </pre>
-
-          <h3>Built-in Modules</h3>
-          <p>Python's standard library includes many built-in modules for various purposes.</p>
-          <pre>
-            <code
-            ># Example of using a built-in module
-            import random
-            
-            random_number = random.randint(1, 10)
-            print(random_number)
-            </code>
-          </pre>
-        </article>
-      </section>
-
-      <section class="main-section" id="External_Libraries">
-        <header>External Libraries</header>
-        <article>
-          <p>Python has a vast ecosystem of external libraries developed by the community to extend its capabilities.</p>
-          <pre>
-            <code
-            ># Example of using an external library
-            import numpy as np
-            
-            arr = np.array([1, 2, 3, 4, 5])
-            print(np.mean(arr))  # Output: 3.0
-            </code>
-          </pre>
-        </article>
-      </section>
-
-      <section class="main-section" id="Best_Practices">
-        <header>Best Practices</header>
-        <article>
-          <h3>Code Formatting and Styling</h3>
-          <p>Python has an official style guide called PEP 8, which promotes readable and consistent code.</p>
-
-          <h3>Documentation and Comments</h3>
-          <p>Proper documentation and comments are essential to make code understandable to others.</p>
-
-          <h3>Unit Testing</h3>
-          <p>Writing unit tests using frameworks like <b>unittest</b> or <b>pytest</b> helps ensure the code's correctness and stability.</p>
-        </article>
-      </section>
-
-      <section class="main-section" id="Tips_and_Tricks">
-        <header>Tips and Tricks</header>
-        <article>
-          <h3>Pythonic Idioms</h3>
-          <p>Learn and adopt Pythonic idioms to write code that is more readable and efficient.</p>
-
-          <h3>Performance Optimization</h3>
-          <p>Python offers various ways to optimize code performance, such as using built-in functions and libraries wisely.</p>
-        </article>
-      </section>
-
-      <section class="main-section" id="Frequently_Asked_Questions_(FAQ)">
-        <header>Frequently Asked Questions (FAQ)</header>
-        <article>
-          <b>Click on the questions below, if you want to see the answers :</b>
-          <p class="faq-question"><a href="faq.html" target="_blank">What is Python, and what can I use it for ?</a></p>
-          <p class="faq-question"><a href="faq.html" target="_blank">How do I install Python on my computer ?</a></p>
-          <p class="faq-question"><a href="faq.html" target="_blank">What is the difference between Python 2 and Python 3 ?</a></p>
-          <p class="faq-question"><a href="faq.html" target="_blank">How do I declare variables in Python, and do I need to specify their data types ?</a></p>
+          <b>Tekan pada pesan error di bawah ini, Jika anda ingin mengetahui jawabanya :</b>
+          <p class="faq-question"><a href="faq.html" target="_blank">How to fix ModuleNotFoundError: No modul name 'numpys'?</a></p>
+          <p class="faq-question"><a href="faq.html" target="_blank">How to fix SyntaxError: expected ':'?</a></p>
+          <p class="faq-question"><a href="faq.html" target="_blank">How to fix NameError: name 'ocr' is not defined?</a></p>
+          <p class="faq-question"><a href="faq.html" target="_blank">How to fix TypeError: can only concatenate str (not "int") to str?</a></p>
         </article>
       </section>
 
@@ -408,7 +199,7 @@
           <ul>
             <li>
               This article written by
-              <a href="https://openai.com/blog/chatgpt" target="_blank">ChatGPT</a>
+              <a href="https://www.linkedin.com/in/irfan-badri-1553572b2" target="_blank">Muhammad Irfan Badriawan</a>
             </li>
           </ul>
         </article>
